@@ -25,12 +25,15 @@
             <ColumnDefinition/>
             <ColumnDefinition Width="3*"/>
         </Grid.ColumnDefinitions>
-        <Label x:Name="CarbonFiberLabel" Grid.Column="1" Content="Carbon Fiber: 0" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Center"/>
         <StackPanel x:Name="MenuStackPanel" Grid.Row="1" Margin="10,10,10,10">
             <Button x:Name="OverviewButton" Content="Overview" Margin="0,0,0,10" Click="Overview_Clicked"/>
             <Button x:Name="BuildingsButton" Content="Buildings" Margin="0,0,0,10" Click="Buildings_Clicked"/>
         </StackPanel>
 
         <ContentControl Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="1" Grid.RowSpan="1" Content="{Binding}"/>
+        <StackPanel x:Name="ResourcesValuesStackPanel" Grid.Column="1" Margin="10,10,10,10" VerticalAlignment="Center" Orientation="Horizontal" HorizontalAlignment="Left">
+            <Label x:Name="CarbonFiberNameLabel" Content="CarbonFiber: " HorizontalAlignment="Left" Margin="10,0,10,0"/>
+            <Label x:Name="CarbonFiberValueLabel" Content="0"/>
+        </StackPanel>
     </Grid>
 </Window>

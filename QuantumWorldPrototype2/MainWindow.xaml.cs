@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace QuantumWorldPrototype2
 {
@@ -21,10 +22,25 @@ namespace QuantumWorldPrototype2
     /// </summary>
     public partial class MainWindow : Window
     {
+        DispatcherTimer timer = new DispatcherTimer();
+        
+        int carbonFiberValue = 0;
+
         public MainWindow()
         {
+            timer.Interval = TimeSpan.FromSeconds(1);
+            timer.Tick += Timer_Tick;
+
             InitializeComponent();
             DataContext = new OverviewViewModel();
+            timer.Start();
+        }
+
+        private void Timer_Tick(object? sender, EventArgs e)
+        {
+            
+            carbonFiberValue += 1;
+            CarbonFiberValueLabel.Content = $"{carbonFiberValue}";
         }
 
         private void Buildings_Clicked(object sender, RoutedEventArgs e)
