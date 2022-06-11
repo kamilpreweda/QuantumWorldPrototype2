@@ -6,13 +6,10 @@ using System.Threading.Tasks;
 
 namespace QuantumWorldPrototype2.Models
 {
-    public static class CarbonFiberModel
+    public static class CarbonFiberBuilding
     {
+        public static int Cost = 100;
 
-        public static int Value = 500;
-
-        public static int Multiplier = 1;
-
-       
+        public static int lvl = 1;
     }
 }

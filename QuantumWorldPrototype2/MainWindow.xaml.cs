@@ -24,9 +24,7 @@ namespace QuantumWorldPrototype2
     public partial class MainWindow : Window
     {
         DispatcherTimer timer = new DispatcherTimer();
-
-        int carbonFiberValue = CarbonFiberModel.DefaultValue;
-
+        
         public MainWindow()
         {
             timer.Interval = TimeSpan.FromSeconds(1);
@@ -42,8 +40,9 @@ namespace QuantumWorldPrototype2
         private void Timer_Tick(object? sender, EventArgs e)
         {
             
-            carbonFiberValue += CarbonFiberModel.Multiplier;
-            CarbonFiberValueLabel.Content = $"{carbonFiberValue}";
+            CarbonFiberModel.Value += CarbonFiberModel.Multiplier;
+            CarbonFiberValueLabel.Content = $"{CarbonFiberModel.Value}";
+            
         }
 
         private void Buildings_Clicked(object sender, RoutedEventArgs e)
