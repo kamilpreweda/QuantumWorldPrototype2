@@ -37,6 +37,10 @@ namespace QuantumWorldPrototype2.Views
                 CarbonFiberBuildingCostValueLabel.Content = CarbonFiberBuilding.Cost;
 
             }
+            else
+            {
+                MessageBox.Show("Masz za mało surowców!");
+            }
         }
     }
 }
