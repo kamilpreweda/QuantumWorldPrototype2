@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuantumWorldPrototype2.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,17 @@ namespace QuantumWorldPrototype2
         public MainWindow()
         {
             InitializeComponent();
+            DataContext = new OverviewViewModel();
+        }
+
+        private void Buildings_Clicked(object sender, RoutedEventArgs e)
+        {
+            DataContext = new BuildingsViewModel();
+        }
+
+        private void Overview_Clicked(object sender, RoutedEventArgs e)
+        {
+            DataContext = new OverviewViewModel();
         }
     }
 }
