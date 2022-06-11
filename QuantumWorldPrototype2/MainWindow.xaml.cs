@@ -1,4 +1,5 @@
 ﻿using QuantumWorldPrototype2.ViewModels;
+using QuantumWorldPrototype2.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,8 +24,8 @@ namespace QuantumWorldPrototype2
     public partial class MainWindow : Window
     {
         DispatcherTimer timer = new DispatcherTimer();
-        
-        int carbonFiberValue = 0;
+
+        int carbonFiberValue = CarbonFiberModel.DefaultValue;
 
         public MainWindow()
         {
@@ -32,6 +33,8 @@ namespace QuantumWorldPrototype2
             timer.Tick += Timer_Tick;
 
             InitializeComponent();
+            
+         
             DataContext = new OverviewViewModel();
             timer.Start();
         }
@@ -39,7 +42,7 @@ namespace QuantumWorldPrototype2
         private void Timer_Tick(object? sender, EventArgs e)
         {
             
-            carbonFiberValue += 1;
+            carbonFiberValue += CarbonFiberModel.Multiplier;
             CarbonFiberValueLabel.Content = $"{carbonFiberValue}";
         }
 
