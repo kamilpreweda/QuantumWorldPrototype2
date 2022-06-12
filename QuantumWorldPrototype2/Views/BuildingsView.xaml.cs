@@ -26,21 +26,5 @@ namespace QuantumWorldPrototype2.Views
         {
             InitializeComponent();
         }
-
-        private void CarbonFiberBuildingUpgradeButton_Click(object sender, RoutedEventArgs e)
-        {
-            if(CarbonFiberModel.Value > CarbonFiberBuilding.Cost)
-            {
-                CarbonFiberModel.Value -= CarbonFiberBuilding.Cost;
-                CarbonFiberBuilding.lvl++;
-                CarbonFiberBuilding.Cost *= CarbonFiberBuilding.lvl;
-                CarbonFiberBuildingCostValueLabel.Content = CarbonFiberBuilding.Cost;
-
-            }
-            else
-            {
-                MessageBox.Show("Masz za mało surowców!");
-            }
-        }
     }
 }

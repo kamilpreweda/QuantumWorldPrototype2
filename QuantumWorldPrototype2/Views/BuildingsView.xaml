@@ -17,8 +17,8 @@
         </Grid.ColumnDefinitions>
         <StackPanel x:Name="CarbonFiberBuildingStackPanel" Margin="10,10,10,10" Orientation="Horizontal">
             <Label x:Name="CarbonFiberBuildingCostLabel" Content="Cost: " VerticalAlignment="Top" Margin="10,10,10,10"/>
-            <Label x:Name="CarbonFiberBuildingCostValueLabel" Content="100" VerticalAlignment="Top" Margin="10,10,10,10"/>
-            <Button x:Name="CarbonFiberBuildingUpgradeButton" Content="Upgrade" VerticalAlignment="Top" Margin="10,10,10,10" Click="CarbonFiberBuildingUpgradeButton_Click"/>
+            <Label x:Name="CarbonFiberBuildingCostValueLabel" Content="{Binding CarbonFiberBuildingCost}" VerticalAlignment="Top" Margin="10,10,10,10"/>
+            <Button x:Name="CarbonFiberBuildingUpgradeButton" Content="Upgrade" VerticalAlignment="Top" Margin="10,10,10,10" Command="{Binding BuildingUpgrade}" />
         </StackPanel>
 
     </Grid>
